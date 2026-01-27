@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+class student {
+    public:
+    int rollno;
+    int age;
+    
+    student(int r,int a){
+        rollno =101;
+        age = 35;
+    }
+};
+int main(){
+    student si(101,120); //constructor is called here
+    
+    
+}
