@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int* ptr = new int(10);
+    
+cout<<*ptr;
+//delete ptr
+}
+
+//int main(){
+//while(true)
+//{
+//   int *x=new int(3);
+//   cout<<*x;
+//}
+//}
