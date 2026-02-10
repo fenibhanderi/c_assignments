@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+class Customer {
+private:
+    string name;
+    double balance;
+    int account;
+
+public:
+    // Constructor
+    Customer(string n, double b, int a) {
+        name = n;
+        balance = b;
+        account = a;
+    }
+
+    // Deposit Method
+    void deposit(double amount) {
+        balance += amount;
+        cout << "Amount Deposited: " << amount << endl;
+        cout << "Updated Balance: " << balance << endl;
+    }
+
+    // Withdraw Method
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            cout << "Amount Withdrawn: " << amount << endl;
+            cout << "Remaining Balance: " << balance << endl;
+        } else {
+            cout << "Insufficient Balance!" << endl;
+        }
+    }
+
+    // Display Method
+    void display() {
+        cout << "\nCustomer Details:" << endl;
+        cout << "Name: " << name << endl;
+        cout << "Account No: " << account << endl;
+        cout << "Balance: " << balance << endl;
+    }
+};
+
+int main() {
+    Customer c1("Feni", 500000, 12345);
+
+    c1.display();
+    c1.deposit(20000);
+    c1.withdraw(30000);
+    c1.display();
+
+    return 0;
+}
