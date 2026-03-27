@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+struct Student{
+    string name;
+    int rollno;
+    float marks;
+    
+};
+
+int main(){
+    Student s1;
+    
+    s1.name="Feni";
+    s1.rollno=25;
+    s1.marks=90;
+    
+    cout<<"Student : "<<s1.name<<endl;
+    cout<<"Rollno : "<<s1.rollno<<endl;
+    cout<<"Marks : "<<s1.marks<<endl;
+    
+    return 0;
+}
