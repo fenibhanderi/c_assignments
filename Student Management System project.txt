@@ -1,0 +1,152 @@
+1. Introduction
+
+The Student Management System is a simple console-based application developed using C++. It helps in managing student records such as student ID, name, and marks.
+
+This project demonstrates the use of Data Structures and Object-Oriented Programming (OOP) concepts like classes, arrays, and basic operations.
+
+ 2. Objectives of the Project
+To store student records efficiently
+To perform operations like:
+Add student
+Display students
+Search student
+Delete student
+To understand practical implementation of C++ concepts
+To improve problem-solving and programming skills
+
+ 3. Methodology / System Design
+ Data Structures Used:
+Array → To store student records
+Class → To define student structure
+Functions → To perform operations
+ Operations:
+Add Student
+Display All Students
+Search Student by ID
+Delete Student
+ Algorithm (Simple Flow):
+Start program
+Show menu
+Take user choice
+Perform operation
+Repeat until exit
+
+4. Implementation / Source Code
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    int id;
+    string name;
+    float marks;
+};
+
+Student s[100];
+int count = 0;
+
+// Add student
+void addStudent() {
+    cout << "Enter ID: ";
+    cin >> s[count].id;
+    cout << "Enter Name: ";
+    cin >> s[count].name;
+    cout << "Enter Marks: ";
+    cin >> s[count].marks;
+    count++;
+    cout << "Student Added Successfully!\n";
+}
+
+// Display students
+void displayStudent() {
+    for(int i = 0; i < count; i++) {
+        cout << "\nID: " << s[i].id;
+        cout << "\nName: " << s[i].name;
+        cout << "\nMarks: " << s[i].marks << endl;
+    }
+}
+
+// Search student
+void searchStudent() {
+    int id, found = 0;
+    cout << "Enter ID to search: ";
+    cin >> id;
+
+    for(int i = 0; i < count; i++) {
+        if(s[i].id == id) {
+            cout << "Student Found!\n";
+            cout << s[i].name << " - " << s[i].marks << endl;
+            found = 1;
+            break;
+        }
+    }
+    if(!found)
+        cout << "Student Not Found!\n";
+}
+
+// Delete student
+void deleteStudent() {
+    int id;
+    cout << "Enter ID to delete: ";
+    cin >> id;
+
+    for(int i = 0; i < count; i++) {
+        if(s[i].id == id) {
+            for(int j = i; j < count-1; j++) {
+                s[j] = s[j+1];
+            }
+            count--;
+            cout << "Student Deleted!\n";
+            return;
+        }
+    }
+    cout << "Student Not Found!\n";
+}
+
+int main() {
+    int choice;
+
+    do {
+        cout << "\n--- Student Management System ---\n";
+        cout << "1. Add Student\n2. Display\n3. Search\n4. Delete\n5. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch(choice) {
+            case 1: addStudent(); break;
+            case 2: displayStudent(); break;
+            case 3: searchStudent(); break;
+            case 4: deleteStudent(); break;
+            case 5: cout << "Exiting...\n"; break;
+            default: cout << "Invalid choice!\n";
+        }
+    } while(choice != 5);
+
+    return 0;
+}
+
+ 5. Conclusion
+
+This project demonstrates how basic C++ concepts can be used to build a functional Student Management System.
+
+It helps in understanding:
+
+-Data handling using arrays
+-Object-Oriented Programming
+-Basic CRUD operations
+
+The system can be further improved by adding:
+
+-File handling
+-GUI interface
+-Database integration
+- How to Run
+1.Copy the code into a .cpp file
+
+2.Compile using:
+
+g++ filename.cpp
+
+3.Run:
+
+./a.out
